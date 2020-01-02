@@ -51,7 +51,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func shareButtonAction(_ sender: Any) {
-        if let shareImage = pictureImage.image {
+        if let shareImage = pictureImage.image?.resize() {
             let shareItems = [shareImage]
             let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
             controller.popoverPresentationController?.sourceView = view

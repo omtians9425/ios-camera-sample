@@ -13,6 +13,7 @@
 		1DA82AAF23BDBBDC00F9451B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA82AAD23BDBBDC00F9451B /* Main.storyboard */; };
 		1DA82AB123BDBBDD00F9451B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA82AB023BDBBDD00F9451B /* Assets.xcassets */; };
 		1DA82AB423BDBBDD00F9451B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA82AB223BDBBDD00F9451B /* LaunchScreen.storyboard */; };
+		1DA82ABC23BDC9F000F9451B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA82ABB23BDC9F000F9451B /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1DA82AB023BDBBDD00F9451B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DA82AB323BDBBDD00F9451B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DA82AB523BDBBDD00F9451B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DA82ABB23BDC9F000F9451B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				1DA82AAB23BDBBDC00F9451B /* ViewController.swift */,
 				1DA82AAD23BDBBDC00F9451B /* Main.storyboard */,
 				1DA82AB023BDBBDD00F9451B /* Assets.xcassets */,
+				1DA82ABB23BDC9F000F9451B /* UIImageExtension.swift */,
 				1DA82AB223BDBBDD00F9451B /* LaunchScreen.storyboard */,
 				1DA82AB523BDBBDD00F9451B /* Info.plist */,
 			);
@@ -141,6 +144,7 @@
 				1DA82AAC23BDBBDC00F9451B /* ViewController.swift in Sources */,
 				1DA82AA823BDBBDC00F9451B /* AppDelegate.swift in Sources */,
 				1DA82AAA23BDBBDC00F9451B /* SceneDelegate.swift in Sources */,
+				1DA82ABC23BDC9F000F9451B /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
