@@ -62,10 +62,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // delegate method
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // set image
-        pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        capturedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         
         // close modal view
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            self.performSegue(withIdentifier: "showEffectiveView", sender: nil)
+        })
+    }
+    
+    var capturedImage: UIImage?
+    
+    // called before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextViewController = segue.destination as? EffectViewController {
+            nextViewController.originalImage = capturedImage
+        }
     }
 }
 

@@ -14,6 +14,8 @@ class EffectViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        effectiveImage.image = originalImage
     }
     
 
@@ -32,10 +34,44 @@ class EffectViewController: UIViewController {
     @IBOutlet weak var effectiveImage: UIImageView!
     
     @IBAction func effectButtonAction(_ sender: Any) {
+        if let image = originalImage {
+            let filterName = "CIPhotoEffectMono"
+            let rotate = image.imageOrientation
+            let inputImage = CIImage(image: image) // UIImage -> CIImage
+            
+            guard let effectFilter = CIFilter(name: filterName) else {
+                return
+            }
+            
+            effectFilter.setDefaults()
+            effectFilter.setValue(inputImage, forKey: kCIInputImageKey)
+            
+            guard let outputImage = effectFilter.outputImage  else {
+                return
+            }
+            
+            let ciContext = CIContext(options: nil)
+            
+            guard let cgImage = ciContext.createCGImage(outputImage, from: outputImage.extent) else {
+                return
+            }
+            
+            effectiveImage.image = UIImage(cgImage: cgImage, scale: 1.0, orientation: rotate)
+        }
     }
     @IBAction func shareButtonAction(_ sender: Any) {
+        if let shareImage = effectiveImage.image {
+            let shareItems = [shareImage]
+            
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            
+            let button = sender as! UIButton
+            controller.popoverPresentationController?.sourceView = button
+            present(controller, animated: true, completion: nil)
+        }
     }
     @IBAction func closeButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
