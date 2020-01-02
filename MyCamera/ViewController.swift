@@ -67,6 +67,5 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // close modal view
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
